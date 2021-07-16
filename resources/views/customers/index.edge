@@ -19,11 +19,12 @@
       @each(customer in customers)
         <tr class="table-data">
           <td>{{ customer.fullName }}</td>
-          <td>{{ customer.mobile }}</td>
+          <td>{{ customer.phoneNumber }}</td>
           <td>{{ customer.email }}</td>
           <td>
             <select name="type">
-              <option value="Customer" selected={{ custumer.userType }}>Customer</option>
+              <option value="Customer">Customer</option>
+              {{--  <option value="Customer" selected={{ custumer.userType }}>Customer</option>  --}}
               <option value="Prospect">Prospect</option>
             </select>
           </td>
