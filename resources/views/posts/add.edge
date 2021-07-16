@@ -1,0 +1,24 @@
+@layout('main')
+
+@section('content')
+
+  <a href='/posts'>Go Back</a>
+  <hr>
+  <h1>Add Post</h1>
+  <form action="/post" method="POST">
+    {{ csrfField() }}
+    <div class="form-group">
+      <label>Title</label>
+      <input name="title" class="form-control" placeholder="Title"></input>
+    </div>
+    <br>
+    <div class="form-group">
+      <label>Body</label>
+      <textarea name="body" class="form-control" placeholder="Body"></textarea>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+@endsection
