@@ -18,14 +18,14 @@
     <tbody>
       @each(customer in customers)
         <tr class="table-data">
-          <td>{{ customer.fullName }}</td>
+          <td><a href='/customers/{{customer.id}}'> {{ customer.fullName }}</a></td>
           <td>{{ customer.phoneNumber }}</td>
           <td>{{ customer.email }}</td>
           <td>
-            <select name="type">
+            <select name="type" value={{ customer.type }}>
+              <option value="Prospect">Prospect</option>
               <option value="Customer">Customer</option>
               {{--  <option value="Customer" selected={{ custumer.userType }}>Customer</option>  --}}
-              <option value="Prospect">Prospect</option>
             </select>
           </td>
         </tr>
