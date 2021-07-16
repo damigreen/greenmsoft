@@ -26,6 +26,10 @@ class CustomerController {
       customer: customer,
     })
   }
+
+  async add({ view }) {
+    return view.render('customers.add')
+  }
 }
 
 module.exports = CustomerController
