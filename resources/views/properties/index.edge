@@ -1,0 +1,31 @@
+@layout('main')
+
+@section('content')
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        @each(head in propertiesHeader)
+          <th>
+            <div class="header-wrap">
+                <span>{{ head.value }}</span>
+              </div>
+            </th>
+          @endeach
+      </tr>
+    </thead>
+    <tbody>
+      @each(prop in properties)
+        <tr class="table-data">
+          <td><a href='/customers/{{customer.id}}'> {{ prop.propertyName }}</a></td>
+          <td>{{ prop.value }}</td>
+          <td>{{ prop.tenant }}</td>
+          <td>{{ prop.rent }}</td>
+        </tr>
+      @endeach
+    </tbody>
+  </table>  
+</div>
+
+@endsection
