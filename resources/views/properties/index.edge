@@ -18,9 +18,9 @@
     <tbody>
       @each(prop in properties)
         <tr class="table-data">
-          <td><a href='/customers/{{customer.id}}'> {{ prop.propertyName }}</a></td>
+          <td><a href='/properties/{{prop.id}}'> {{ prop.propertyName }}</a></td>
           <td>{{ prop.value }}</td>
-          <td>{{ prop.tenant }}</td>
+          <td>{{ prop.tenants }}</td>
           <td>{{ prop.rent }}</td>
         </tr>
       @endeach
