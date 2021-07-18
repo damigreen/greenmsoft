@@ -4,14 +4,19 @@
 const Schema = use('Schema')
 
 class PropertiesSchema extends Schema {
+
+  
   up () {
-    this.create('properties', (table) => {
+    this.alter('properties', (table) => {
       table.increments()
       table.string('propertyName')
       table.integer('value')
       table.integer('tenants')
       table.integer('rent')
       table.timestamps()
+    })
+    this.alter('properties', (table) => {
+      table.string('image')
     })
   }
 
