@@ -2,6 +2,8 @@
 
 const Property = use('App/Models/Property');
 
+const { validate } = use('Validator');
+
 class PropertyController {
 
   async index({ view }) {
@@ -29,6 +31,21 @@ class PropertyController {
 
   async new({ view }) {
     return view.render('properties.new')
+  }
+
+  async store({ request, response, session }) {
+    const property = new Property();
+    property.propertyName = request.input('name')
+    property.value = request.input('value')
+    property.tenants = request.input('tenants')
+    property.rent = request.input('rent')
+
+    await property.save()
+
+    session.flash({ notification: "Success: Property Added!!" })
+
+    return response.redirect('/properties')
+
   }
 }
 
