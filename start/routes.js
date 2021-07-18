@@ -21,9 +21,12 @@ Route.on('/').render('home')
 Route.get('/posts', 'PostController.index')
 Route.get('/posts/add', 'PostController.add')
 Route.get('/posts/:id', 'PostController.details')
+Route.post('/posts', 'PostController.store')
+
 Route.get('/customers', 'CustomerController.index')
 Route.get('/customers/add', 'CustomerController.add')
 Route.get('/customers/:id', 'CustomerController.details')
+
 Route.get('/properties', 'PropertyController.index')
 Route.get('/properties/new', 'PropertyController.new')
 Route.get('/properties/:id', 'PropertyController.details')
