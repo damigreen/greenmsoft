@@ -13,10 +13,8 @@ class PropertiesSchema extends Schema {
       table.integer('value')
       table.integer('tenants')
       table.integer('rent')
-      table.timestamps()
-    })
-    this.alter('properties', (table) => {
       table.string('image')
+      table.timestamps()
     })
   }
 
