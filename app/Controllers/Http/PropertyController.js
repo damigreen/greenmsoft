@@ -34,10 +34,23 @@ class PropertyController {
   }
 
   async store({ request, response, session }) {
+    const validation = await validate(request.all(), {
+      propertyName: 'required|min:3|max:255',
+      value: 'required',
+      tenants: 'required',
+      rent: 'required',
+    })
+
+    if (validation.fails()) {
+      session.withErrors(validation.message()).flashAll()
+      return response.redirect('back')
+    }
+
     const property = new Property();
-    property.propertyName = request.input('name')
+    property.propertyName = request.input('propertyName')
     property.value = request.input('value')
     property.tenants = request.input('tenants')
+    property.image = request.input('image')
     property.rent = request.input('rent')
 
     await property.save()
