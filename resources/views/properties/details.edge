@@ -1,0 +1,14 @@
+@layout('main')
+
+@section('content')
+
+  <a href="/customers">Go Back</a>
+  <div>
+    <div>{{ property.propertyName }}</div>
+    <div>{{ property.value }}</div>
+    <div>{{ property.tenants }}</div>
+    <div>{{ property.rent }}</div>
+    <div>{{ customer.created_at }}</div>
+  </div>
+
+@endsection
