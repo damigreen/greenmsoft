@@ -37,3 +37,6 @@ Route.post('/properties', 'PropertyController.store')
 Route.get('/properties/edit/:id', 'PropertyController.edit')
 Route.put('/properties/:id', 'PropertyController.update')
 Route.delete('/properties/:id', 'PropertyController.destroy')
+
+Route.get('register', 'Auth/RegisterController.showRegisterForm')
+Route.post('/register', 'Auth/RegisterController.register').as('register')
