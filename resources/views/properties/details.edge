@@ -2,13 +2,17 @@
 
 @section('content')
 
-  <a href="/customers">Go Back</a>
-  <div>
-    <div>{{ property.propertyName }}</div>
-    <div>{{ property.value }}</div>
-    <div>{{ property.tenants }}</div>
-    <div>{{ property.rent }}</div>
-    <div>{{ customer.created_at }}</div>
+  <div class="d-flex flex-column w-100">
+    <a href="/customers">Go Back</a>
+    <div>
+      <div>{{ property.propertyName }}</div>
+      <div>{{ property.value }}</div>
+      <div>{{ property.tenants }}</div>
+      <div>{{ property.rent }}</div>
+      <div>{{ customer.created_at }}</div>
+    </div>
+
+    <a class="btn w-25 btn-dark float-left " href='/properties/edit/{{ property.id }}'>Edit</a>
   </div>
 
 @endsection
