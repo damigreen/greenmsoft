@@ -42,7 +42,7 @@ class PropertyController {
     })
 
     if (validation.fails()) {
-      session.withErrors(validation.message()).flashAll()
+      session.withErrors(validation.messages()).flashAll()
       return response.redirect('back')
     }
 
@@ -83,6 +83,15 @@ class PropertyController {
     session.flash({ notification: 'Sucess! Property Updated'})
 
     response.redirect('/properties')
+  }
+
+  async destroy({ params, response, session }) {
+    const property = await Property.find(params.id)
+    await property.delete()
+
+    session.flash({ notification: 'Success! Property deleted'})
+
+    return response.redirect('/properties')
   }
 }
 
