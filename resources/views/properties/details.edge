@@ -3,7 +3,7 @@
 @section('content')
 
   <div class="d-flex flex-column w-100">
-    <a href="/customers">Go Back</a>
+    <a href="/properties">Go Back</a>
     <div>
       <div>{{ property.propertyName }}</div>
       <div>{{ property.value }}</div>
@@ -13,6 +13,15 @@
     </div>
 
     <a class="btn w-25 btn-dark float-left " href='/properties/edit/{{ property.id }}'>Edit</a>
+
+    {{--  @if(window.alert("Are you sure you want to delete property"))  --}}
+    <form action="{{ property.id + '?_method=DELETE' }}" method="POST">
+      {{ csrfField() }}
+      <button class="btn btn-danger d-block float-right">Delete</button>
+
+    </form>
+    {{--  @endif  --}}
+
   </div>
 
 @endsection
