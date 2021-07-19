@@ -9,7 +9,7 @@
     {{ csrfField() }}
     <div class="form-group">
       <label>Name</label>
-      <input name="name" class="form-control" placeholder="Property Name" value="{{ old('name', '') }}"></input>
+      <input name="propertyName" class="form-control" placeholder="Property Name" value="{{ old('name', '') }}"></input>
       {{ elIf('<span class="text-danger">$self</span>', getErrorFor('name'), hasErrorFor('name')) }}
     </div>
     <br>

@@ -5,7 +5,6 @@
   <a href='/properties'>Go Back</a>
   <hr>
   <h1>Edit Property</h1>
-  {{--  <form action="/properties" method="POST">  --}}
     <form action="{{ '/properties/' + property.id + '?_method=PUT' }}" method="POST">
     {{ csrfField() }}
     <div class="form-group">
