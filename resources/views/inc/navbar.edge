@@ -24,6 +24,15 @@
         <li class="nav-item">
           <a href="/properties/new" class="nav-link">Add Property</a>
         </li>
+        <li class="nav-item">
+          @loggedIn
+            <div class="nav-link">{{ auth.user.username }}</div>
+            <a href="/logout" class="nav-link">Logout</a>
+          @else
+            <a href="/login" class="nav-link">Login</a>
+            <a href="/register" class="nav-link">Register</a>
+          @endloggedIn
+        </li>
       </ul>
     </div>
   </div>
