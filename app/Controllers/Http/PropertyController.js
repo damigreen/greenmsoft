@@ -60,6 +60,14 @@ class PropertyController {
     return response.redirect('/properties')
 
   }
+
+  async edit({ params, view }) {
+    const property = await Property.find(params.id)
+
+    return view.render('properties.edit', {
+      property: property,
+    })
+  }
 }
 
 module.exports = PropertyController
