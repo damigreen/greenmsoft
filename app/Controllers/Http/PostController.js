@@ -80,8 +80,6 @@ class PostController {
     session.flash({ notification: 'Post Updated' })
 
     return response.redirect('/posts')
-
-
   }
 
   async destroy({ params, session, response }) {
