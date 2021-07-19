@@ -2677,6 +2677,11 @@
   "resolved" "https://registry.npmjs.org/random-bytes/-/random-bytes-1.0.0.tgz"
   "version" "1.0.0"
 
+"random-string@^0.2.0":
+  "integrity" "sha1-pG5DdTUr7amg17DRntbTIezR2C0="
+  "resolved" "https://registry.npmjs.org/random-string/-/random-string-0.2.0.tgz"
+  "version" "0.2.0"
+
 "range-parser@~1.2.0", "range-parser@~1.2.1":
   "integrity" "sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg=="
   "resolved" "https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz"
