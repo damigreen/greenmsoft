@@ -57,7 +57,7 @@ class PropertyController {
 
     session.flash({ notification: "Success: Property Added!!" })
 
-    return response.redirect('/properties')
+    return response.redirect('/properties') 
 
   }
 
@@ -67,6 +67,22 @@ class PropertyController {
     return view.render('properties.edit', {
       property: property,
     })
+  }
+
+  async update({ params, request, response, session}) {
+    const property = await Property.find(params.id)
+
+    property.propertyName = request.input('propertyName')
+    property.value = request.input('value')
+    property.tenants = request.input('tenants')
+    property.rent = request.input('rent')
+    property.image = request.input('image')
+
+    await property.save()
+
+    session.flash({ notification: 'Sucess! Property Updated'})
+
+    response.redirect('/properties')
   }
 }
 
