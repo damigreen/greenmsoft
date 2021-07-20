@@ -17,7 +17,8 @@
 const Route = use('Route')
 
 // Route.on('/').render('welcome')
-Route.on('/').render('home')
+Route.on('/').render('home').as('home')
+
 Route.get('/posts', 'PostController.index')
 Route.get('/posts/add', 'PostController.add')
 Route.get('/posts/edit/:id', 'PostController.edit')
@@ -38,8 +39,11 @@ Route.get('/properties/edit/:id', 'PropertyController.edit')
 Route.put('/properties/:id', 'PropertyController.update')
 Route.delete('/properties/:id', 'PropertyController.destroy')
 
+Route.get('/home', 'HomeController.showHomepage')
 Route.get('register', 'Auth/RegisterController.showRegisterForm')
 Route.post('/register', 'Auth/RegisterController.register').as('register')
 Route.get('/register/confirm/:token', 'Auth/RegisterController.confirmEmail')
 Route.get('/login', 'Auth/LoginController.showLoginForm')
 Route.post('/login', 'Auth/LoginController.login').as('login')
+Route.get('/logout', 'Auth/AuthenticatedController.logout')
+Route
