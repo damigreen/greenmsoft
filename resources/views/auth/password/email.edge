@@ -6,7 +6,7 @@
       <h2>Reset Password</h2>
 
       @include('inc.notification')
-      <form action="{{ route('register') }}" method="post">
+      <form action="/password/email" method="post">
         {{ csrfField() }}
 
         
