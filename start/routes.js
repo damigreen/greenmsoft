@@ -40,3 +40,4 @@ Route.delete('/properties/:id', 'PropertyController.destroy')
 
 Route.get('register', 'Auth/RegisterController.showRegisterForm')
 Route.post('/register', 'Auth/RegisterController.register').as('register')
+Route.get('/register/confirm/:token', 'Auth/RegisterController.confirmEmail')
