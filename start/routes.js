@@ -46,4 +46,5 @@ Route.get('/register/confirm/:token', 'Auth/RegisterController.confirmEmail')
 Route.get('/login', 'Auth/LoginController.showLoginForm')
 Route.post('/login', 'Auth/LoginController.login').as('login')
 Route.get('/logout', 'Auth/AuthenticatedController.logout')
-Route
+Route.get('/password/reset', 'Auth/PasswordResetController.showLinkRequetForm')
+Route.post('password/email', 'Auth/PasswordResetController.sendRestLinkEmail')
