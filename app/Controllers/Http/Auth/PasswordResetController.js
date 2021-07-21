@@ -113,9 +113,6 @@ class PasswordRestController {
         // It the token exist
         // Hash passord and save to the database
         user.password = await Hash.make(request.input('password'))
-        console.log(`User Password---------------------${user.password}`)
-        console.log(`Hashed--------------${await Hash.make(request.input('password'), user.password)}`)
-        console.log(`Hashed password--------------${await Hash.make(request.input('password'), user.password)}`)
         await user.save()
         
         // Delete password reset token
