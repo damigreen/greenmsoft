@@ -4,6 +4,7 @@ hooks.after.providersBooted(() => {
   const View = use('View')
   const Env = use('Env')
   const Exception = use('Exception')
+  
 
   View.global('appUrl', path => {
     const APP_URL = Env.get('APP_URL')
@@ -12,8 +13,12 @@ hooks.after.providersBooted(() => {
   })
 
   // Handle InvalidSessionException
+  try {
+    Exception.handle('InvalidSessionException', (error, { response }) => {
+        return response.redirect('/login') 
 
-  Exception.handle('InvalidSessionException', (error, { response }) => {
-    return response.redirect('/login') 
-  })
+    })
+  } catch (e) {
+    response.send('User present')
+  }
 })
