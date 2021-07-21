@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div>
-  <table class="table">
+<div class="table-responsive">
+  <table class="table table-bordered table-striped small table-hover">
     <thead>
       <tr>
         @each(head in propertiesHeader)
@@ -21,7 +21,7 @@
           <td><a href='/properties/{{prop.id}}'> {{ prop.propertyName }}</a></td>
           <td>{{ prop.value }}</td>
           <td>{{ prop.tenants }}</td>
-          <td>{{ prop.rent }}</td>
+          <td>₦{{ prop.rent }}</td>
         </tr>
       @endeach
     </tbody>
