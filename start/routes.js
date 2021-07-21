@@ -17,7 +17,7 @@
 const Route = use('Route')
 
 // Route.on('/').render('welcome')
-Route.on('/').render('home').as('home')
+Route.on('/').render('home').as('home').middleware('auth')
 
 Route.get('/posts', 'PostController.index')
 Route.get('/posts/add', 'PostController.add')
